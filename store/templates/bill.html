@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load cart %}
+
+
+
+{% for order in order %}
+    {{order.city}}
+    {{order.state}}
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
