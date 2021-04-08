@@ -12,8 +12,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
-# @login_required(login_url='login')
-
 class Index(View):
     def get(self,request):
         # if session delete the it show error so we handel the situation first we make a cart
@@ -158,14 +156,20 @@ def logout(request):
     return redirect('login')
 
 
-class Cart(View):
-    # @method_decorator(login_required(login_url='login'))
-    def get(self,request):
+# class Cart(View):
+#     def get(self,request):
+#
+#         ids = list(request.session.get('cart').keys())
+#         product = Product.get_product_by_id(ids)
+#         return render(request,'cart.html',{'product':product})
 
+
+# @login_required(login_url='login')
+def cart(request):
+    if request.method == 'GET':
         ids = list(request.session.get('cart').keys())
         product = Product.get_product_by_id(ids)
-
-        return render(request,'cart.html',{'product':product})
+        return render(request, 'cart.html', {'product': product})
 
 
 class CheckOut(View):
