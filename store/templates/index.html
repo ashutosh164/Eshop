@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-    <!-- Card Body -->
 {% block body %}
 {% load cart %}
     <div class="container-fluid mt-3">
@@ -57,22 +56,16 @@
                 <form action="/#{{product.id}}" method="POST" class="btn-block">
                   {% csrf_token %}
                   <input hidden type="text" name="product" value="{{product.id}}">
-                  <input herf="#" type="submit" class="btn btn-primary border btn-sm form-control" value="Add To Carts">
+                  <input type="submit" class="btn btn-primary border btn-sm form-control" value="Add To Carts">
                 </form>
                 {% endif %}
 
-              
-           
-         
             </div>
             </div>
             {% endfor %}
         </div>
-    
 
         </div>
       </div>
-
-
 
 {% endblock %}
