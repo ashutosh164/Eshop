@@ -97,7 +97,6 @@ class Signup(View):
             recipent_list = [customer.email, ]
             send_mail(subject, message, email_from, recipent_list)
 
-
             return redirect('login')
         else:
 
